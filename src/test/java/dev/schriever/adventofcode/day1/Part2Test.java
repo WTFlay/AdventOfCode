@@ -19,8 +19,10 @@ public class Part2Test {
 
   @BeforeEach
   public void setup() {
-    DigitFinder digitFinder = new DigitFinderFactory(List.of(new NaturalDigitFinder(), new LetterDigitFinder()));
-    trebuchetAnalyzer = new TrebuchetAnalyzer(digitFinder);
+    DigitFinderStrategy compositeDigitFinderStrategy = new CompositeDigitFinderStrategy(
+        List.of(new NaturalDigitFinderStrategy(), new LetterDigitFinderStrategy())
+    );
+    trebuchetAnalyzer = new TrebuchetAnalyzer(compositeDigitFinderStrategy);
   }
 
   @ParameterizedTest

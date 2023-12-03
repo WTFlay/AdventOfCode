@@ -1,6 +1,6 @@
 package dev.schriever.adventofcode.day1;
 
-public class NaturalDigitFinder implements DigitFinder {
+public class NaturalDigitFinderStrategy implements DigitFinderStrategy {
   @Override
   public boolean isDigit(String str, int pos) {
     return Character.isDigit(str.charAt(pos));

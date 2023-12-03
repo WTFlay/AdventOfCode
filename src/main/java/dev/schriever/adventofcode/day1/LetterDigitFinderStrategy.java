@@ -3,11 +3,11 @@ package dev.schriever.adventofcode.day1;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LetterDigitFinder implements DigitFinder {
+public class LetterDigitFinderStrategy implements DigitFinderStrategy {
 
   private final Map<String, String> digitLettersMap;
 
-  public LetterDigitFinder() {
+  public LetterDigitFinderStrategy() {
     digitLettersMap = new HashMap<>();
     digitLettersMap.put("one", "1");
     digitLettersMap.put("two", "2");

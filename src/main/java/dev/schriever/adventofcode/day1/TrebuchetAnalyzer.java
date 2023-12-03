@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TrebuchetAnalyzer {
 
-  private final DigitFinder digitFinder;
+  private final DigitFinderStrategy digitFinderStrategy;
 
   public String parseCalibrationValue(String inputLine) {
     return findFirstDigit(inputLine) + findLastDigit(inputLine);
@@ -13,8 +13,8 @@ public class TrebuchetAnalyzer {
 
   private String findFirstDigit(String str) {
     for (int i = 0; i < str.length(); i++) {
-      if (digitFinder.isDigit(str, i)) {
-        return digitFinder.getDigit(str, i);
+      if (digitFinderStrategy.isDigit(str, i)) {
+        return digitFinderStrategy.getDigit(str, i);
       }
     }
     return null;
@@ -22,8 +22,8 @@ public class TrebuchetAnalyzer {
 
   private String findLastDigit(String str) {
     for (int i = str.length() - 1; i >= 0; i--) {
-      if (digitFinder.isDigit(str, i)) {
-        return digitFinder.getDigit(str, i);
+      if (digitFinderStrategy.isDigit(str, i)) {
+        return digitFinderStrategy.getDigit(str, i);
       }
     }
     return null;

@@ -20,8 +20,7 @@ public class Part1Test {
 
   @BeforeEach
   public void setup() {
-    DigitFinder digitFinder = new DigitFinderFactory(List.of(new NaturalDigitFinder()));
-    trebuchetAnalyzer = new TrebuchetAnalyzer(digitFinder);
+    trebuchetAnalyzer = new TrebuchetAnalyzer(new NaturalDigitFinderStrategy());
   }
 
   @ParameterizedTest
