@@ -22,7 +22,7 @@ public class Part2Test {
     DigitFinderStrategy compositeDigitFinderStrategy = new CompositeDigitFinderStrategy(
         List.of(new NaturalDigitFinderStrategy(), new LetterDigitFinderStrategy())
     );
-    trebuchetAnalyzer = new TrebuchetAnalyzer(compositeDigitFinderStrategy);
+    trebuchetAnalyzer = new TrebuchetAnalyzer(new SimpleDigitFinder(compositeDigitFinderStrategy));
   }
 
   @ParameterizedTest

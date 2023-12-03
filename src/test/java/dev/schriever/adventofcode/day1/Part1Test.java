@@ -20,7 +20,7 @@ public class Part1Test {
 
   @BeforeEach
   public void setup() {
-    trebuchetAnalyzer = new TrebuchetAnalyzer(new NaturalDigitFinderStrategy());
+    trebuchetAnalyzer = new TrebuchetAnalyzer(new SimpleDigitFinder(new NaturalDigitFinderStrategy()));
   }
 
   @ParameterizedTest
