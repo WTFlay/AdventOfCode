@@ -71,4 +71,18 @@ class FloorNavigationServiceTest {
 
     assertEquals(138, service.detectFloor(input));
   }
+
+  @Test
+  void detectBasementEntryPosition_examples() {
+    assertEquals(1, service.detectBasementEntryPosition(")"));
+    assertEquals(5, service.detectBasementEntryPosition("()())"));
+  }
+
+  @Test
+  void detectBasementEntryPosition_result() throws IOException {
+    String input = FileHelper.readAllLines("classpath:year2015/day1/input.txt").get(0);
+
+    assertEquals(1771, service.detectBasementEntryPosition(input));
+  }
+
 }
